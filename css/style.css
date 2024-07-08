@@ -1,8 +1,8 @@
 :root {
-    --main-color :#0078FF;
-    --head-color:#1e1e1e;
-    --bg-section-color:#F5F5F5;
-    --body-color :#4E4E4E;
+    --main-color: #0078FF;
+    --head-color: #1e1e1e;
+    --bg-section-color: #F5F5F5;
+    --body-color: #4E4E4E;
 }
 
 /* Variables */
@@ -10,6 +10,7 @@
 .main-color {
     color: var(--main-color);
 }
+
 .bg-footer-color {
     background-color: #0362D3;
 }
@@ -97,7 +98,7 @@
     height: 20px;
 }
 
-.navbar-toggler-icon > span {
+.navbar-toggler-icon>span {
     /* background-color: white;
     flex-basis: 100%; */
     height: 2px;
@@ -124,6 +125,7 @@
     .home-title h1 {
         font-size: 3rem;
     }
+
     .home-title p {
         font-size: 1.5rem;
     }
@@ -150,7 +152,7 @@
     height: 8rem;
     border-width: 10px;
     border-style: solid;
-    border-color:var(--main-color);
+    border-color: var(--main-color);
     border-radius: 50%;
     padding: 10px;
     margin: auto;
@@ -161,7 +163,7 @@
 
 .card:hover .icon {
     background-color: var(--main-color);
-    border-color:#CDE1F8;
+    border-color: #CDE1F8;
     color: #fff;
 }
 
@@ -183,7 +185,7 @@
     height: 5rem;
     border-width: 10px;
     border-style: solid;
-    border-color:#CDE1F8;
+    border-color: #CDE1F8;
     border-radius: 50%;
     padding: 10px;
     margin: auto;
@@ -193,7 +195,9 @@
 }
 
 @media (min-width:1025px) {
-    .tasks , .slid{
+
+    .tasks,
+    .slid {
         background-attachment: fixed;
     }
 
@@ -205,6 +209,11 @@
 
 .card:hover .scale {
     transform: scale(120%);
+}
+
+/* portfolio */
+.c-pre .image {
+    cursor: pointer;
 }
 
 /* slide */
@@ -252,6 +261,7 @@
 .card-footer .inner {
     width: fit-content;
 }
+
 /* footer */
 
 button[type="submit"] {
@@ -275,7 +285,7 @@ button[type="submit"]:hover {
     height: 3rem;
     border-width: 5px;
     border-style: solid;
-    border-color:var(--main-color);
+    border-color: var(--main-color);
     border-radius: 50%;
     padding: 10px;
     background-color: #fff;
@@ -285,9 +295,9 @@ button[type="submit"]:hover {
     cursor: pointer;
 }
 
-.social .icon:hover{
+.social .icon:hover {
     background-color: var(--main-color);
-    border-color:#CDE1F8;
+    border-color: #CDE1F8;
     color: #fff;
 }
 
@@ -301,11 +311,12 @@ button[type="submit"]:hover {
 .bottom-20px {
     bottom: 20px;
 }
+
 .end-20px {
     right: 20px;
 }
 
-footer p{
+footer p {
     color: rgba(255, 255, 255, 0.797);
 
 }
@@ -314,10 +325,99 @@ footer p a {
     color: rgba(255, 255, 255, 0.797);
     text-decoration: none;
 }
+
 footer p a:hover {
     color: rgb(255, 255, 255);
     text-decoration: solid rgba(255, 255, 255, 0.797) 2px underline;
     /* text-decoration-thickness: 5px;
     text-decoration-line: underline;
     text-decoration-style: solid; */
+}
+
+
+/* lightBox */
+
+.lightbox-container {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+}
+
+
+.lightbox-container .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-container i {
+    cursor: pointer;
+}
+
+.lightbox-item {
+    width: 700px;
+    height: 600px;
+    background-color: rgb(0, 13, 29);
+    color: #cdcd;
+    border: 1px solid rgba(255, 255, 255, 255.15);
+    border-radius: .5rem;
+
+}
+
+#prev {
+    left: -10rem;
+}
+
+#next {
+    right: -10rem;
+}
+@media (max-width:992px) {
+    #prev {
+        left: -5rem;
+    }
+    
+    #next {
+        right: -5rem;
+    }
+}
+@media (max-width:650px) {
+    #prev {
+        left: -2rem;
+    }
+    
+    #next {
+        right: -2rem;
+    }
+}
+.lightbox-item .header {
+    position: relative;
+}
+
+.lightbox-item .header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 255.15);
+    height: 1px;
+}
+
+.lightbox-container .content {
+    min-height: calc(100% - 140px);
+    background-image: url(../img/work-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.lightbox-item .foot {
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    background-color: rgb(0, 13, 29);
+    color: #fff;
 }
